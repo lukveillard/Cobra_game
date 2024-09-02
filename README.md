@@ -1,4 +1,4 @@
-# Cobra_game
+# gameCobra - IFRJ - SJM
 Trabalho de avaliação do curso onde foi desenvolvido game da Cobra, Snake (1997) da Nokia.
 
 Com base na sua codificação foi implementado as seguintes alterações:
