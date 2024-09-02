@@ -8,11 +8,11 @@ Com base na sua codificação foi implementado as seguintes alterações:
 
 Além disso, a partir dos códigos escritos em JavaScript (.js) do jogo “IFRJ Cobra” Identificar as classes, os atributos, os métodos e os relacionamentos do jogo IFRJ Game.
 
-  a. Os nomes das classes, atributos e métodos deverão obedecer a notação Camel Case;
-  b. Todos atributos e métodos deverão ser públicos;  
-  c. Considere qualquer programa funcional ou objeto com se fosse uma classe;
-  d. Identifique os relacionamentos entre as classes;
-  e. Códigos em Javascript:
+a. Os nomes das classes, atributos e métodos deverão obedecer a notação Camel Case;
+b. Todos atributos e métodos deverão ser públicos;  
+c. Considere qualquer programa funcional ou objeto com se fosse uma classe;
+d. Identifique os relacionamentos entre as classes;
+e. Códigos em Javascript:
     i. tela.js/cenário.js
     ii. placar.js
     iii. cobra.js
