@@ -1,13 +1,13 @@
-class Alimento{
-    imagemArq="capybara.png";
-    constructor(tamanho){
-        this.tamanho = tamanho;
-        this.x = Math.random()*(tela.largura - tamanho);
-        this.y = Math.random()*(tela.altura - tamanho) + placar.altura;
-        this.imagem = new Image();
-        this.imagem.src = this.imagemArq;
+class Alimento extends objetoJogo {
+    arqImagem='capybara.png';
+    #imagem;
+    constructor(valor,...args){
+        super(args);
+        this.valor = valor;
+        this.#imagem = new Image();
+        this.#imagem.src = this.arqImagem;
     }
     desenhar(){
-        canvasCtx.drawImage(this.imagem, this.x,this.y, this.tamanho,this.tamanho)
+        canvasCtx.drawImage(this.#imagem, this.x, this.y, this.tamanho, this.tamanho);
     }
 }
