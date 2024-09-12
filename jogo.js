@@ -14,7 +14,7 @@ function jogar (){
     else{
         if (placar.qtdPontos > placar.recorde)
             placar.recorde = placar.qtdPontos 
-        placar.nomeJogo = "Fim de Jogo";
+        placar.nomeJogo = "Game over!";
         placar.desenhar()
     }
 

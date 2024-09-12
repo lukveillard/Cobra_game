@@ -4,16 +4,17 @@ const cobra = {
       tamanho:10,
       comprimento:10,
       taxaCrescimento:100,
-      cor:"black",
+      cor:["black", "blue", "orange"],
+      corAtual: 0,
       direcao:0,
       vida:3,
-      desenhar(){
+      desenhar() {
           canvasCtx.fillStyle= this.cor;
           for (let i = 0; i < this.x.length; ++i)
                   canvasCtx.fillRect(this.x[i],this.y[i],this.tamanho,this.tamanho);
   
       },
-      mover(){
+      mover() {
           if (this.direcao == 0){
                   this.x.unshift(this.x[0]+1)
                   this.y.unshift(this.y[0])
@@ -45,22 +46,21 @@ const cobra = {
              ||  (this.seComeu()))
                   this.morrer()
       },
-      morrer(){
+      morrer() {
           this.vida--;
           this.x=[400];
           this.y=[260];
           if (this.vida==2) this.cor="orange"
           if (this.vida==1) this.cor="red"
       }, 
-      crescer()
-      {
+      crescer() {
           for (let i = 0; i < this.taxaCrescimento; ++i){
               this.x.unshift(this.x[0]);
               this.y.unshift(this.y[0]);
           }
           this.comprimento+=this.taxaCrescimento;
       },
-      seComeu(){     
+      seComeu() {     
           if (this.x.length > 1)
                   if ((this.x[this.tamanho] != this.x[this.tamanho+1]) || (this.y[this.tamanho] != this.y[this.tamanho+1]))
                           for (let i = 3*this.tamanho; i < this.x.length ; ++i){
@@ -70,7 +70,7 @@ const cobra = {
                                       && (Math.abs(distY) < (this.tamanho-5)))
                                          return true;      
                                    
-                  }                      
+                  }                     
           return false;                    
       }
-  };  
+  }; 
