@@ -4,15 +4,16 @@ const cobra = {
       tamanho:10,
       comprimento:10,
       taxaCrescimento:100,
-      cor:["black", "blue", "orange"],
-      corAtual: 0,
+      cor: "black",
+      cor2: "orange",
       direcao:0,
       vida:3,
       desenhar() {
-          canvasCtx.fillStyle= this.cor;
-          for (let i = 0; i < this.x.length; ++i)
-                  canvasCtx.fillRect(this.x[i],this.y[i],this.tamanho,this.tamanho);
-  
+        canvasCtx.fillStyle = this.cor;
+        for (let i = 0; i < this.x.length; ++i) {
+                if(i > this.x.length / 2) canvasCtx.fillStyle = this.cor2;
+            canvasCtx.fillRect(this.x[i], this.y[i], this.tamanho, this.tamanho);
+        }
       },
       mover() {
           if (this.direcao == 0){
@@ -50,16 +51,16 @@ const cobra = {
           this.vida--;
           this.x=[400];
           this.y=[260];
-          if (this.vida==2) this.cor="orange"
+          if (this.vida==2) this.cor="blue"
           if (this.vida==1) this.cor="red"
-      }, 
-      crescer() {
-          for (let i = 0; i < this.taxaCrescimento; ++i){
-              this.x.unshift(this.x[0]);
-              this.y.unshift(this.y[0]);
-          }
-          this.comprimento+=this.taxaCrescimento;
       },
+          crescer() {
+                for (let i = 0; i < this.taxaCrescimento; ++i) {
+                    this.x.unshift(this.x[0]);
+                    this.y.unshift(this.y[0]);
+                }
+                this.comprimento += this.taxaCrescimento;
+        },
       seComeu() {     
           if (this.x.length > 1)
                   if ((this.x[this.tamanho] != this.x[this.tamanho+1]) || (this.y[this.tamanho] != this.y[this.tamanho+1]))
@@ -68,9 +69,8 @@ const cobra = {
                                   const distY = this.y[i] - this.y[0];
                                   if ((Math.abs(distX) < (this.tamanho-5)) 
                                       && (Math.abs(distY) < (this.tamanho-5)))
-                                         return true;      
-                                   
+                                         return true;               
                   }                     
-          return false;                    
-      }
-  }; 
+          return false;     
+         }               
+};

@@ -1,6 +1,6 @@
 class objetoJogo{
    constructor(args){
-        this.tamanho = 25;    
+        this.tamanho = 30;    
         this.x = Math.round(this.tamanho+(tela.largura-2*this.tamanho)*Math.random());
         this.y = Math.round(placar.altura+(tela.altura-2*this.tamanho)*Math.random());
         if (args.length >= 1)  this.tamanho = args[0];

@@ -1,7 +1,7 @@
 const tela = {
    largura:800,
    altura:400,
-   imagemArq: "imagem-fundo.jpg",
+   imagemArq: "gramado-fundo.png",
    desenhar(){
       this.imagem = new Image();
       this.imagem.src = this.imagemArq;

@@ -3,6 +3,7 @@ const placar = {
   altura:60,
   cor:"black",
   pontos: 0,
+  qtdPontos: 0,
   corTexto:"white",
   nomeJogo:"IFRJ Snake",
   desenhar(){
@@ -13,6 +14,9 @@ const placar = {
       canvasCtx.textBaseline = "middle";
       canvasCtx.fillStyle = this.corTexto;
       canvasCtx.fillText(this.nomeJogo,400,30);
-
+      canvasCtx.font = "16px Fantasy";
+      canvasCtx.textAlign = "right";
+      canvasCtx.fillText(this.qtdPontos + "ptos", 700,45);
+      canvasCtx.fillText(cobra.vida + "vida(s)", 700,15);
   }
 }
